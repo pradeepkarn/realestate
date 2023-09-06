@@ -13,4 +13,3 @@ config.ini
 # Ignore temporary files
 temp*.txt
 *.zip
-.htaccess
