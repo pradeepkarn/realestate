@@ -1,0 +1,170 @@
+<?php //print_r($unitData); die(); ?>
+
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="row" id="gradient">
+                
+               <h1> عرض تفاصل الوحدة </h1>
+            </div>
+            <div class="row">
+                <div class="tabs_div">
+                    <ul>
+                        <li> معلومات  </li>
+                        <li> أخرى </li>
+                    </ul>
+                    <div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="success"> اسم العقار : </td>
+                                    <td><?php if(isset($unitData[0]->building_name)) { echo $unitData[0]->building_name; } ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="success"> رقم الوحدة : </td>
+
+                                      <?php if(substr($unitData[0]->uid,0,1)=="R") {
+                                          $uid=str_replace("R", "سكني  ", $unitData[0]->uid);
+                                        } 
+
+                                        elseif(substr($unitData[0]->uid,0,1)=="C") {
+                                          $uid=str_replace("C", "تجاري   ", $unitData[0]->uid);
+                                        } 
+                                        else
+                                        {
+                                             $uid=$unitData[0]->uid;
+                                        }
+                                        ?>
+
+                                    <td><?php if(isset($unitData[0]->uid)) { echo $uid; } ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="success"> غرض التأجي ر : </td>
+                                    <td><?php if(isset($unitData[0]->unit_purpose)) { if($unitData[0]->unit_purpose=='0'){ echo " سكني  " ; }
+                                    elseif ($unitData[0]->unit_purpose=='1') { echo " تجاري      "; }                                         
+                                     } ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="success"> نوع الوحدة : </td>
+                                    <td><?php if(isset($unitData[0]->unit_type)) { echo $unitData[0]->unit_type; } ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="success"> رقم الدور : </td>
+                                    <td><?php if(isset($unitData[0]->floor_no)) { 
+                                       echo ($unitData[0]->floor_no);
+                                        } ?></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="success"> رقم العداد : </td>
+                                    <td><?php if(isset($unitData[0]->electricity_switch_no)) { echo $unitData[0]->electricity_switch_no; } ?></td>
+                                </tr> 
+                                <tr>
+                                    <td class="success">رقم حساب الكهرباء : </td>
+                                    <td><?php if(isset($unitData[0]->electricity_acc_no)) { echo $unitData[0]->electricity_acc_no; } ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="success"> حالة السكن : </td>
+                                    <td><?php if(isset($unitData[0]->occupy_status)) { if($unitData[0]->occupy_status=='0'){ echo " شاغر  " ; }
+                                    elseif ($unitData[0]->occupy_status=='1') { echo " مسكون "; }                                         
+                                     } ?></td>
+                                </tr>
+                                 <tr>
+                                    <td class="success"> عنوان العقار : </td>
+                                    <td><?php if(isset($unitData[0]->address)) { echo $unitData[0]->address; } ?></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="success">  تم إنشاءه بواسطة  : </td>
+                                    <td><?php if(isset($bankData[0]->created_by)) { echo $bankData[0]->created_by; } ?></td>
+                                </tr>
+                               
+                                <tr>
+                                    <td class="success"> تم إنشاءه بتاريخ  : </td>
+                                    <td><?php if(isset($bankData[0]->created_on)) { $c=date_create($bankData[0]->created_on); echo date_format($c,'Y-m-d'); } ?></td>
+                                </tr>
+                               
+                                <tr>
+                                    <td class="success">  تم تحديثه بواسطة : </td>
+                                    <td><?php if(isset($bankData[0]->updated_by)) { echo $bankData[0]->updated_by; } ?></td>
+                                </tr>
+                               
+                                <tr>
+                                    <td class="success">   تم تحديثه بتاريخ : </td>
+                                    <td><?php if(isset($bankData[0]->updated_on)) {  $u=date_create($bankData[0]->updated_on);echo date_format($u,'Y-m-d'); } ?></td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                   
+                </div>
+            </div>
+            <div align="center">
+                <button type="button" class="btn btn-primary" style="margin-top:10px;" onclick="history.back();"> الخلف  </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- you need to include the shieldui css and js assets in order for the charts to work -->
+<link rel="stylesheet" type="text/css" href="https://www.shieldui.com/shared/components/latest/css/light-glow/all.min.css" />
+<link rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light-glow/all.min.css">
+<script type="text/javascript" src="https://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $(".tabs_div").shieldTabs();
+    });
+</script>
+
+<style>
+    .pb-product-details-ul {
+        list-style-type: none;
+        padding-left: 0;
+        color: black;
+    }
+
+        .pb-product-details-ul > li {
+            padding-bottom: 5px;
+            font-size: 15px;
+        }
+
+    #gradient {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feffff+0,ddf1f9+31,a0d8ef+62 */
+        background: #feffff; /* Old browsers */
+        background: -moz-linear-gradient(left, #feffff 0%, #ddf1f9 31%, #a0d8ef 62%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #feffff 0%,#ddf1f9 31%,#a0d8ef 62%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #feffff 0%,#ddf1f9 31%,#a0d8ef 62%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=1 ); /* IE6-9 */
+        border: 1px solid #f2f2f2;
+        padding: 20px;
+    }
+
+    #hits {
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        vertical-align: middle;
+        padding-top: 15px;
+        font-size: 17px;
+        color: white;
+    }
+
+    #fan {
+        vertical-align: middle;
+        padding-top: 15px;
+        font-size: 17px;
+        color: white;
+    }
+
+    .pb-product-details-fa > span {
+        padding-top: 20px;
+    }
+</style>

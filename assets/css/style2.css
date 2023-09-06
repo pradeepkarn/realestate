@@ -1,0 +1,104 @@
+* {
+  font-family: 'Cairo';
+}
+
+.header {
+  box-shadow: 0px -10px 15px 0px #ccc;
+  background-color: #ffffff;
+}
+ul {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+ul li {
+  float: right;
+  height: 85px;
+  line-height: 95px;
+  white-space: nowrap;
+}
+.header ul li:last-of-type {
+  line-height: initial;
+  float: left;
+  width: 100%;
+}
+ul li a {
+  display: block;
+  color: #050543;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-align: left;
+}
+ul li a:hover{
+  background-color: initial;
+}
+.header ul li:last-of-type a {
+  color: #48626e;
+}
+/* Change the link color to #111 (black) on hover */
+/*
+.header ul li a:hover {
+  background-color: #111;
+  color: white;
+}
+*/
+@media (max-width: 992px) {
+  ul li, .header ul li:last-of-type a {
+    float: initial;
+    height: initial;
+    line-height: initial;
+	text-align: center;
+    white-space: nowrap;
+    margin: auto;
+  }
+  .nav-item{
+    width: 100%;
+  }
+}
+
+.sub-title-line{
+  position: relative;
+  width: 190px;
+  margin: auto;
+  height: 2px;
+  background: #a07800;
+  border-radius: 15px;"
+}
+.sub-title-line:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin:auto;
+  background: #565656;
+  width: 160px;
+  height: 2px;
+}
+
+.pagination {
+	display: inline-flex;
+	width: initial;
+}
+.pagination > li > a, .pagination > li > span {
+    color: #050543;
+}
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+	background-color: initial;
+	border-color: initial;
+	color: #333377;
+}
+
+.page-breadcrumb ol li a{
+  display: initial;
+  padding: initial;
+}
+
+.footer-bottom {
+  font-size: 10px;
+}
+
+
