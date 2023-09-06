@@ -157,9 +157,6 @@
 		</div>
 	</div>
 
-
-
-
 	<!--- End Search ---->
 
 	<!-- Ads Main -->
