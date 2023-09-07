@@ -4,12 +4,12 @@
 		<div class="container-fluid">
 			<div class="row align-items-center">
 				<div class="col-md-12 col-12 text-center">
-					<h2 class="breadcrumb-title m-0"><?php echo $adDetails->purpose;?></h2>
+					<h2 class="breadcrumb-title m-0"><?php echo $adDetails['subject'];?></h2>
 					<nav aria-label="breadcrumb" class="page-breadcrumb">
 						<ol class="breadcrumb mt-2">
 							<li class="breadcrumb-item"><a href="<?php echo base_url();?>">الرئيسية</a></li>
 							<li class="breadcrumb-item"><a href="<?php echo base_url();?>advertisements">العروض العقارية</a></li>
-							<li class="breadcrumb-item active" aria-current="page"><?php echo $adDetails->purpose;?></li>
+							<li class="breadcrumb-item active" aria-current="page"><?php echo $adDetails['subject'];?></li>
 						</ol>
 					</nav>
 				</div>
@@ -59,7 +59,7 @@
     </style>
     <?php  
     
-   if(!is_null($adDetails->id))
+   if(!is_null($adDetails['adid']))
    {
     
     ?>
@@ -72,12 +72,12 @@
 						<div class="card-body" style="text-align:right;">
 							<div class="row">
 								<div class="col-md-6">
-									<?php $img=$adDetails->images; ?>
+									<?php $img=explode(',',$adDetails['images']); ?>
 									<div style="overflow: hidden; --swiper-navigation-color: #fff; --swiper-pagination-color: #fff; background: #f7f7f7;" class="swiper mySwiper2">
 									  <div class="swiper-wrapper">
 										<?php for($i=0;$i<count($img);$i++) { ?>
 										<div class="swiper-slide">
-											<img src="<?php echo $img[$i]; ?>" alt="" />
+											<img src="<?php echo base_url();?>/img/propertyImage/<?php echo $img[$i];?>" alt="" />
 										</div>
 										<?php } ?>
 									  </div>
@@ -88,7 +88,7 @@
 									  <div class="swiper-wrapper">
 										<?php for($i=0;$i<count($img);$i++) { ?>
 										<div class="swiper-slide">
-											<img src="<?php echo $img[$i]; ?>" alt="" />
+											<img src="<?php echo base_url();?>/img/propertyImage/<?php echo $img[$i];?>" alt="" />
 										</div>
 										<?php } ?>
 									  </div>
@@ -97,11 +97,11 @@
 								<div class="col-md-6">
 									<div class="ads-details justify-content-between align-items-right">
 										<div class="mr-0 w-100">
-										    <h1 style="margin: 0;"><?php echo $adDetails->purpose;?></h1>
+										    <h1 style="margin: 0;"><?php echo $adDetails['subject'];?></h1>
 											<div class="card-body" style="text-align:right;">
-												<p class="mb-0"><b> الموقع  :  </b><a href="<?php echo $adDetails->site;?>" target="_blank"><?php echo $adDetails->site; ?></a></p>
-												<p class="mb-0"><b> الحي  :  </b> <?php echo $adDetails->district;?></p>
-												<p class="mb-0"><b> المدينة  :  </b><?php echo $adDetails->city; ?></p>
+												<p class="mb-0"><b> الموقع  :  </b><a href="<?php echo $adDetails['location'];?>" target="_blank"><?php echo $adDetails['location']; ?></a></p>
+												<p class="mb-0"><b> الحي  :  </b> <?php echo $adDetails['district'];?></p>
+												<p class="mb-0"><b> المدينة  :  </b><?php echo $adDetails['city']; ?></p>
 											</div>
 										</div>
 		  								<div class="freelancer-apply">
