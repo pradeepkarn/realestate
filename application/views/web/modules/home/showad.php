@@ -1,4 +1,8 @@
  
+<?php 
+print_r($adDetails);
+?>
+
 	<!-- Breadcrumb -->
 	<div class="breadcrumb-bar pt-4 pb-4">
 		<div class="container-fluid">
