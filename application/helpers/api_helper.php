@@ -70,9 +70,9 @@ function filter_api_data($obj)
         if ($res->success == 1) {
             return $res->data;
         } else {
-            return null;
+            return [];
         }
     } else {
-        return null;
+        return [];
     }
 }
