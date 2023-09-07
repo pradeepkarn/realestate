@@ -1,5 +1,5 @@
 <?php
-function get_offer_details_api($obj)
+function get_api_data($obj)
 {
     // Initialize cURL session
     $ch = curl_init();
