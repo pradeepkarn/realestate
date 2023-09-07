@@ -170,18 +170,33 @@ class Home_controller extends CI_Controller
 		} else {
 			$data['search'] = 0;
 		}
+
+
+
 		$this->data['page'] = 'advertisement';
 		$apilink = APIDOMAIN . "/api/v1/realstate-offer-list";
 		$obj = new stdClass;
 		$obj->link = $apilink;
-		$data['addListFromApi'] = get_api_data($obj);
+		
+		if (isset($_POST['search_prop'])) {
+			$search['purpose'] = isset($_POST['purpose']) ? $_POST['purpose'] : null;
+			$search['property_type'] = isset($_POST['propertyType']) ? $_POST['propertyType'] : null;
+			$search['district'] = isset($_POST['district']) ? $_POST['district'] : null;
+			$search['start_price'] = isset($_POST['startPrice']) ? $_POST['startPrice'] : null;
+			$search['end_price'] = isset($_POST['endPrice']) ? $_POST['endPrice'] : null;
+			$obj->search = (object) $search;
+			$data['addListFromApi'] = filter_api_data($obj);
+		}else{
+			$data['addListFromApi'] = get_api_data($obj);
+		}
 		$this->load->vars($this->data);
 		$this->load->view($this->data['theme'] . '/template', $data);
 	}
 
 
 
-	public function viewad(){
+	public function viewad()
+	{
 		$ad_id = $this->uri->segment(2);
 		$apilink = APIDOMAIN . "/api/v1/realstate-offer-details/$ad_id";
 		$obj = new stdClass;

@@ -146,6 +146,7 @@
 						 
 						<div class="search-btn-col">
 						<!-- <button class="btn submit-btn">Search</button> -->
+						<input type="hidden" name="seach_prop" value="1">
 						<input type="submit" value=" بحث " class="btn submit-btn">
 						</div> 
 
