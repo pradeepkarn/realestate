@@ -178,7 +178,7 @@
 						<div class="p-3" style="border: 1px solid #ececec;">
 							<div class="row">
 								<div class="col-12">
-									<a href="<?php echo $ad->view_link;?>">
+									<a href="<?php echo base_url();?>viewad/<?php echo $ad->id;?>">
 										<div style="height: 200px; background: url(<?php echo $imgfirst; ?>); background-size: cover; background-position: center center;"></div>
 									</a>
 								</div>

@@ -16,6 +16,8 @@ class Home_controller extends CI_Controller {
 		$this->data['page'] = '';
 		$this->data['base_url'] = base_url();
 		$this->load->library('session');
+		$this->load->helper('api_helper');
+
 	}
 
 
@@ -77,6 +79,7 @@ class Home_controller extends CI_Controller {
 			
 	}
 
+	# api............................................................
 	public function advertisement()
 	{
 
@@ -201,7 +204,7 @@ $this->data['page'] = 'advertisement';
 $ch = curl_init();
 
 // Set cURL options
-curl_setopt($ch, CURLOPT_URL, "https://alyanabea.com/webart/api/v1/realstate-offer-list");
+curl_setopt($ch, CURLOPT_URL, APIDOMAIN."/api/v1/realstate-offer-list");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Ignore SSL certificate verification (use with caution)
 
@@ -240,7 +243,13 @@ public function viewad()
 	{
 		 
 		$ad_id =$this->uri->segment(2);
-		$data['adDetails'] = $this->Home_model->getAdDetails($ad_id);
+		$apilink = APIDOMAIN."/api/v1/realstate-offer-details/$ad_id";
+		$obj = new stdClass;
+		$obj->link = $apilink;
+		$data['adDetailsFromApi'] = get_offer_details_api($obj);	
+
+		// $data['adDetails'] = $this->Home_model->getAdDetails($ad_id);
+		$data['adDetails'] = get_offer_details_api($obj);
  		$this->data['page'] = 'showad';
 		$this->load->vars($this->data);
 		$this->load->view($this->data['theme'] . '/template',$data);
@@ -269,7 +278,5 @@ public function viewad()
         $this->Home_model->update_counter($slug);
     //}
 }
-
-
 
 }

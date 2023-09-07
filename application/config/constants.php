@@ -96,3 +96,6 @@ defined('USER_PANEL_URL')  OR define('USER_PANEL_URL', "User_controller/");
 defined('EXPENSES_PANEL_URL')  OR define('EXPENSES_PANEL_URL', "Expenses_controller/");
 defined('STATEMENT_PANEL_URL')  OR define('STATEMENT_PANEL_URL', "Statement_controller/");
 defined('AD_PANEL_URL')  OR define('AD_PANEL_URL', "Ad_controller/");
+
+#api
+define('APIDOMAIN', "https://alyanabea.com/webart");
