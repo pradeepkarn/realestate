@@ -179,6 +179,7 @@ class Home_controller extends CI_Controller
 		$obj->link = $apilink;
 		
 		if (isset($_POST['search_prop'])) {
+			$obj->link = APIDOMAIN . "/api/v1/realstate-offer-search";
 			$search['purpose'] = isset($_POST['purpose']) ? $_POST['purpose'] : null;
 			$search['property_type'] = isset($_POST['propertyType']) ? $_POST['propertyType'] : null;
 			$search['district'] = isset($_POST['district']) ? $_POST['district'] : null;
