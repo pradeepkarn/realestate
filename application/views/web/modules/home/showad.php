@@ -128,19 +128,19 @@
 							<h4> تفاصيل </h4>
 						</div>
 						<div class="card-body" style="text-align:right;">
-							<p><b><h2><?php echo $adDetails['subject']; ?></h2></b></p>
-							<p class="mb-0"><b> رقم المعلن  :  </b> <?php echo "3152686"; ?></b></p>
-							<p class="mb-0"><b>نوع العقار  :  </b> <?php echo $adDetails['propertyType']; ?></b></p>
-							<p class="mb-0"><b> مساحة العقار  :  </b><?php echo $adDetails['propertyAreaSize']; ?></b></p>
-							<p class="mb-0"><b>  عمر العقار  :  </b> <?php echo $adDetails['propertyAge']; ?></b></p>
-							<p class="mb-0"><b> عدد الأدوار  :  </b><?php echo $adDetails['floorNo']; ?></b></p>
-							<p class="mb-0"><b> عدد الغرف :  </b><?php echo $adDetails['roomNo']; ?></b></p>
-							<p class="mb-0"><b> عدد دورات المياه  :  </b><?php echo $adDetails['bathroomNo']; ?></b></p>
-							<p class="mb-0"><b> مؤثث  :  </b><?php echo $adDetails['furnitureAvailability']; ?></b></p>
-							<p class="mb-0"><b>   طريقة الدفع  :  </b><?php echo $adDetails ['paymentMethod']; ?></b></p> 
-							<p class="mb-0"><b>  القيمة (ر.س) :  </b><?php echo $adDetails ['amount']; ?></b></p>
-							<p class="mb-0"><b>التفاصيل  :</b> <?php echo $adDetails['details']; ?></p>
-							<p class="mb-0"><b> عدد المشاهدات  :</b> <?php echo $adDetails['visits']; ?></p>
+							<p><b><h2><?php echo $adDetails->purpose; ?></h2></b></p>
+							<!-- <p class="mb-0"><b> رقم المعلن  :  </b> <?php // echo "3152686"; ?></b></p> -->
+							<p class="mb-0"><b>نوع العقار  :  </b> <?php echo $adDetails->property_type; ?></b></p>
+							<p class="mb-0"><b> مساحة العقار  :  </b><?php echo $adDetails->property_area; ?></b></p>
+							<p class="mb-0"><b>  عمر العقار  :  </b> <?php echo $adDetails->property_age; ?></b></p>
+							<p class="mb-0"><b> رقم الترخيص. :  </b><?php echo $adDetails->licence_no; ?></b></p>
+							<p class="mb-0"><b> عدد الغرف :  </b><?php echo $adDetails->no_of_rooms;; ?></b></p>
+							<p class="mb-0"><b> عدد دورات المياه  :  </b><?php echo $adDetails->no_of_bathrooms; ?></b></p>
+							<p class="mb-0"><b> مؤثث  :  </b><?php echo $adDetails->furnished; ?></b></p>
+							<p class="mb-0"><b>   طريقة الدفع  :  </b><?php echo $adDetails->payment_method; ?></b></p> 
+							<p class="mb-0"><b>  القيمة (ر.س) :  </b><?php echo $adDetails->the_value; ?></b></p>
+							<p class="mb-0"><b>التفاصيل  :</b> <?php echo $adDetails->details; ?></p>
+							<!-- <p class="mb-0"><b> عدد المشاهدات  :</b> <?php //echo $adDetails['visits']; ?></p> -->
 						</div>
 					</div>
 				</div>
