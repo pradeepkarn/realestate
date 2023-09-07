@@ -185,7 +185,11 @@ class Home_controller extends CI_Controller
 			$search['district'] = isset($_POST['district']) ? $_POST['district'] : null;
 			$search['start_price'] = isset($_POST['startPrice']) ? $_POST['startPrice'] : null;
 			$search['end_price'] = isset($_POST['endPrice']) ? $_POST['endPrice'] : null;
-			$obj->search = $search;
+			$filteredSearch = array_filter($search, function($value) {
+				return $value !== null;
+			});
+			
+			$obj->search = $filteredSearch;
 			$data['addListFromApi'] = filter_api_data($obj);
 		}else{
 			$data['addListFromApi'] = get_api_data($obj);
