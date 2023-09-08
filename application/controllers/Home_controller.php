@@ -190,7 +190,7 @@ class Home_controller extends CI_Controller
 			$search['search_prop'] = isset($_POST['search_prop']) ? $_POST['search_prop'] : 1;
 			$obj->search = $search;
 			$data['addListFromApi'] = filter_api_data($obj);
-			print_r($data['addListFromApi']);
+			// print_r($data['addListFromApi']);
 		}else{
 			$data['addListFromApi'] = get_api_data($obj);
 		}
