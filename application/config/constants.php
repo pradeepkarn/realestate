@@ -98,4 +98,4 @@ defined('STATEMENT_PANEL_URL')  OR define('STATEMENT_PANEL_URL', "Statement_cont
 defined('AD_PANEL_URL')  OR define('AD_PANEL_URL', "Ad_controller/");
 
 #api
-define('APIDOMAIN', "https://alyanabea.com/webart");
+define('APIDOMAIN', "https://alyanabea.com/adminnew");
