@@ -26,6 +26,9 @@
 					<div class="row">
 						<div class="col-10 col-md-6 col-lg-3">
 							<div class="form-group">
+								<?php
+								print_r($search_params);
+								?>
 								<label>الغرض   </label>
 								<div class="text-icon-box">
 									<select   name="purpose" class="form-control">

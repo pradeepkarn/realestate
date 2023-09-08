@@ -171,10 +171,12 @@ class Home_controller extends CI_Controller
 			$data['search'] = 0;
 		}
 
-
-
+		$objSearch = new stdClass;
+		$objSearch->link = APIDOMAIN . "/api/v1/realstate-offer-search-params";
+		$data['search_params']  = get_api_data($objSearch);
 		$this->data['page'] = 'advertisement';
 		$apilink = APIDOMAIN . "/api/v1/realstate-offer-list";
+		
 		$obj = new stdClass;
 		$obj->link = $apilink;
 		
