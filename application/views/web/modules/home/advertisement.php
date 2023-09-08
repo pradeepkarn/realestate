@@ -36,7 +36,7 @@
 										<?php
 										if (isset($search_params->purpose)) {
 											foreach ($search_params->purpose as $sv) { ?>
-												<option value="<?php echo $sv; ?>"><?php echo $sv; ?></option>
+												<option <?php if(isset($_POST['purpose']) && $_POST['purpose']==$sv){echo "selected";} ?> value="<?php echo $sv; ?>"><?php echo $sv; ?></option>
 										<?php }
 										}
 										?>
@@ -52,7 +52,7 @@
 										<?php
 										if (isset($search_params->property_type)) {
 											foreach ($search_params->property_type as $pt) { ?>
-												<option value="<?php echo $pt; ?>"><?php echo $pt; ?></option>
+												<option <?php if(isset($_POST['propertyType']) && $_POST['propertyType']==$pt){echo "selected";} ?> value="<?php echo $pt; ?>"><?php echo $pt; ?></option>
 										<?php }
 										}
 										?>
@@ -70,7 +70,7 @@
 									<?php
 										if (isset($search_params->district)) {
 											foreach ($search_params->district as $dst) { ?>
-												<option value="<?php echo $dst; ?>"><?php echo $dst; ?></option>
+												<option <?php if(isset($_POST['district']) && $_POST['district']==$dst){echo "selected";} ?> value="<?php echo $dst; ?>"><?php echo $dst; ?></option>
 										<?php }
 										}
 										?>
