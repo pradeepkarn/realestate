@@ -4,12 +4,12 @@
 		<div class="container-fluid">
 			<div class="row align-items-center">
 				<div class="col-md-12 col-12 text-center">
-					<h2 class="breadcrumb-title m-0"><?php echo $adDetails->purpose;?></h2>
+					<h2 class="breadcrumb-title m-0"><?php echo $adDetails->title;?></h2>
 					<nav aria-label="breadcrumb" class="page-breadcrumb">
 						<ol class="breadcrumb mt-2">
 							<li class="breadcrumb-item"><a href="<?php echo base_url();?>">الرئيسية</a></li>
 							<li class="breadcrumb-item"><a href="<?php echo base_url();?>advertisements">العروض العقارية</a></li>
-							<li class="breadcrumb-item active" aria-current="page"><?php echo $adDetails->purpose;?></li>
+							<li class="breadcrumb-item active" aria-current="page"><?php echo $adDetails->title;?></li>
 						</ol>
 					</nav>
 				</div>
@@ -97,7 +97,7 @@
 								<div class="col-md-6">
 									<div class="ads-details justify-content-between align-items-right">
 										<div class="mr-0 w-100">
-										    <h1 style="margin: 0;"><?php echo $adDetails->purpose;?></h1>
+										    <h1 style="margin: 0;"><?php echo $adDetails->title;?></h1>
 											<div class="card-body" style="text-align:right;">
 												<p class="mb-0"><b> الموقع  :  </b><a href="<?php echo $adDetails->site;?>" target="_blank"><?php echo $adDetails->site; ?></a></p>
 												<p class="mb-0"><b> الحي  :  </b> <?php echo $adDetails->district;?></p>
@@ -128,7 +128,7 @@
 							<h4> تفاصيل </h4>
 						</div>
 						<div class="card-body" style="text-align:right;">
-							<p><b><h2><?php echo $adDetails->purpose; ?></h2></b></p>
+							<p><b><h2><?php echo $adDetails->title; ?></h2></b></p>
 							<!-- <p class="mb-0"><b> رقم المعلن  :  </b> <?php // echo "3152686"; ?></b></p> -->
 							<p class="mb-0"><b>نوع العقار  :  </b> <?php echo $adDetails->property_type; ?></b></p>
 							<p class="mb-0"><b> مساحة العقار  :  </b><?php echo $adDetails->property_area; ?></b></p>

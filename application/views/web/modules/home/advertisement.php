@@ -135,7 +135,7 @@
 									</div>
 									<div class="col-12">
 										<a href="<?php echo base_url(); ?>viewad/<?php echo $ad->id; ?>">
-											<h4 class="m-2 mt-3"><?php echo $ad->purpose; ?></h4>
+											<h4 class="m-2 mt-3"><?php echo $ad->title; ?></h4>
 											<div class="m-2">
 												<span><?php echo $ad->site; ?></span> <i class="feather-map-pin"></i>
 												<div class="pt-2" style="font-size: 12px;"><?php echo $ad->property_type; ?></div>
